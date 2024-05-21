@@ -5,18 +5,19 @@
          <p :class="{'textLight': lights, 'textDark': !lights}" v-if="language==='spanish'"> proyectes en spanish</p>
             <p :class="{'textLight': lights, 'textDark': !lights}" v-if="language==='english'"> proyectes en english</p>  -->
 
-        <div class="contenedor proyectos ">
+        <div class="contenedor proyectos  mt-5 ">
 
           
 
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
-                <h2 :class="{'textLight': lights, 'textDark': !lights}" class="proyectTitle">Pokedex</h2>
-                 <img class="proyectImg" src="../assets/pokedexpedro.gif" alt="imagenproyecto">
+                <h2  class="proyectTitle"> <a :class="{'textLight': lights, 'textDark': !lights}"  href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank">Pokedex</a></h2>
+                <a href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank"><img class="proyectImg" src="../assets/pokedexpedro.gif" alt="imagenproyecto"></a>
+                 
                  <p   :class="{'textLight': lights, 'textDark': !lights}" class="proyectDescription mt-4">{{   descriptionPokedex}}</p>
                  <div id="proyectoDiv-footer">
                     <p class="githubtext":class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }}
-                        <a v-if="lights" href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                    <a v-if="!lights" href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank"><img  src="../assets/githubclaro.svg" alt=""></a>
+                        <a v-if="lights" href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank"> <img  class="animacion" src="../assets/githubnegro.svg" alt=""></a>
+                    <a v-if="!lights" href="https://pedrolp7.github.io/Pokedex-VUE/" target="_blank"><img  class="animacion" src="../assets/githubclaro.svg" alt=""></a>
                     
                     </p>
                 </div>
@@ -24,13 +25,14 @@
             
             </div>
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}" >
-                <h2 class="proyectTitle " :class="{'textLight': lights, 'textDark': !lights}">{{ ahorcadoTitle }}</h2>
-                 <img class="proyectImg" src="../assets/ahorcadopedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle " > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://pedrolp7.github.io/ahorcado.js/" target="_blank">{{ ahorcadoTitle }} </a></h2>
+                <a href="https://pedrolp7.github.io/ahorcado.js/" target="_blank">  <img class="proyectImg" src="../assets/ahorcadopedro.gif" alt="imagenproyecto"></a>
+                
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionAhorcado}}</p>
 
                  <div id="proyectoDiv-footer">
-                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }} <a v-if="lights" href="https://pedrolp7.github.io/ahorcado.js/" target="_blank"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://pedrolp7.github.io/ahorcado.js/" target="_blank"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }} <a v-if="lights" href="https://pedrolp7.github.io/ahorcado.js/" target="_blank"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://pedrolp7.github.io/ahorcado.js/" target="_blank"><img class="animacion"  src="../assets/githubclaro.svg" alt=""></a></p>
 
                  </div>
                 
@@ -42,60 +44,94 @@
 
 
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">Pomodoro</h2>
-                 <img class="proyectImg" src="../assets/pomodoropedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://pedrolp7.github.io/pomodoro/" target="_blank">Pomodoro-Kanban</a></h2>
+                <a href="https://pedrolp7.github.io/pomodoro/" target="_blank">  <img class="proyectImg" src="../assets/pomodoropedro.gif" alt="imagenproyecto"></a>
+                
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionPomodoro}}</p>
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }}  <a v-if="lights" href="https://pedrolp7.github.io/pomodoro/" target="_blank"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://pedrolp7.github.io/pomodoro/" target="_blank"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer">
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }}  <a v-if="lights" href="https://pedrolp7.github.io/pomodoro/" target="_blank"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://pedrolp7.github.io/pomodoro/" target="_blank"><img class="animacion" src="../assets/githubclaro.svg" alt=""></a></p>
+                    
+                 </div>
+
+                 
                   
             
             </div>
+
+
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">{{phpCollection}}</h2>
-                 <img class="proyectImg" src="../assets/coleccionphppedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://github.com/PedroLP7/coleccionM07" target="_blank">{{phpCollection}}</a></h2>
+                <a href="https://github.com/PedroLP7/coleccionM07" target="_blank"> <img class="proyectImg" src="../assets/coleccionphppedro.gif" alt="imagenproyecto"></a>
+                 
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionCollection}}</p>
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{plusinfo}} <a v-if="lights" href="https://github.com/PedroLP7/coleccionM07" target="_blank"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://github.com/PedroLP7/coleccionM07" target="_blank"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer">
+
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{plusinfo}} <a v-if="lights" href="https://github.com/PedroLP7/coleccionM07" target="_blank"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://github.com/PedroLP7/coleccionM07" target="_blank"><img class="animacion"  src="../assets/githubclaro.svg" alt=""></a></p>
+
+                    </div>
+               
                  
             
             </div>
 
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">RIDERS </h2>
-                 <img class="proyectImg" src="../assets/riderspedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" ><a :class="{'textLight': lights, 'textDark': !lights}" href="https://github.com/PedroLP7/riders" target="_blank"> RIDERS </a></h2>
+                <a href="https://github.com/PedroLP7/riders" target="_blank"> <img class="proyectImg" src="../assets/riderspedro.gif" alt="imagenproyecto"></a>
+                 
                  <p class="proyectDescription mt-4 " :class="{'textLight': lights, 'textDark': !lights}">{{descriptionRiders}}</p>
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }} <a v-if="lights" href="https://github.com/PedroLP7/riders" target="_blank"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://github.com/PedroLP7/riders" target="_blank"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer">
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }} <a v-if="lights" href="https://github.com/PedroLP7/riders" target="_blank"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://github.com/PedroLP7/riders" target="_blank"><img class="animacion"  src="../assets/githubclaro.svg" alt=""></a></p>
+                 </div>
+                
                  
             
             </div>
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
                 
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">{{ aeroTitle }}</h2>  
-                 <img class="proyectImg" src="../assets/aeropedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://github.com/PedroLP7/Aerolineav2" target="_blank">{{ aeroTitle }}</a></h2>
+                <a href="https://github.com/PedroLP7/Aerolineav2" target="_blank"> <img class="proyectImg" src="../assets/aeropedro.gif" alt="imagenproyecto"></a>  
+                
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionAero}} </p> 
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }}  <a v-if="lights" href="https://github.com/PedroLP7/Aerolineav2"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://github.com/PedroLP7/Aerolineav2"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer">
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }}  <a v-if="lights" href="https://github.com/PedroLP7/Aerolineav2"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://github.com/PedroLP7/Aerolineav2"><img class="animacion"  src="../assets/githubclaro.svg" alt=""></a></p>
+
+                    </div>
+
+                
                 
             
             </div>
 
             <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}">
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">{{ laberynthGame }}</h2>
-                 <img class="proyectImg" src="../assets/rpgpedro.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://github.com/PedroLP7/RPGjava" target="_blank"> {{ laberynthGame }} </a></h2>
+                <a href="https://github.com/PedroLP7/RPGjava"target="_blank"> <img class="proyectImg" src="../assets/rpgpedro.gif" alt="imagenproyecto"></a>
+                 
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionLaberyinth}}</p>
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }}  <a v-if="lights" href="https://github.com/PedroLP7/RPGjava"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://github.com/PedroLP7/RPGjava"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer"> 
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}">{{ plusinfo }}  <a v-if="lights" href="https://github.com/PedroLP7/RPGjava"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://github.com/PedroLP7/RPGjava"><img  class="animacion" src="../assets/githubclaro.svg" alt=""></a></p>
+                
+
+                 </div>
+
                 
                 </div>
 
 
                 <div :class="{'proyectoDivLight': lights, 'proyectoDiv': !lights}" >
-                <h2 class="proyectTitle" :class="{'textLight': lights, 'textDark': !lights}">{{ laiatTitle}}</h2>
-                 <img class="proyectImg" src="../assets/LAIAPEDRO.gif" alt="imagenproyecto">
+                <h2 class="proyectTitle" > <a :class="{'textLight': lights, 'textDark': !lights}" href="https://github.com/jeansterj/laiaGame" target="_blank">{{ laiatTitle}}</a></h2>
+                <a href="https://github.com/jeansterj/laiaGame" target="_blank">    <img class="proyectImg" src="../assets/LAIAPEDRO.gif" alt="imagenproyecto"></a>
+             
                  <p class="proyectDescription mt-4" :class="{'textLight': lights, 'textDark': !lights}">{{descriptionLaia}}</p>
-                 <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }} <a v-if="lights" href="https://github.com/jeansterj/laiaGame"> <img  src="../assets/githubnegro.svg" alt=""></a>
-                   <a v-if="!lights" href="https://github.com/jeansterj/laiaGame"><img  src="../assets/githubclaro.svg" alt=""></a></p>
+                 <div id="proyectoDiv-footer"> 
+                    <p  class="githubtext" :class="{'textLight': lights, 'textDark': !lights}"> {{ plusinfo }} <a v-if="lights" href="https://github.com/jeansterj/laiaGame"> <img class="animacion"  src="../assets/githubnegro.svg" alt=""></a>
+                   <a v-if="!lights" href="https://github.com/jeansterj/laiaGame"><img class="animacion" src="../assets/githubclaro.svg" alt=""></a></p>
+                 </div>
+                
                  
                 </div>
           
@@ -223,11 +259,11 @@ export default {
                 }  ,
                 descriptionAero(){
                     if(this.language === 'catalan'){
-                        return 'Primer proyecte utilitzant Programació orientada a objectes , en Java.';
+                        return 'Primer proyecte utilitzant POO , Simula la gestió una aerolinea.';
                     }else if(this.language === 'spanish'){
-                        return 'Primer proyecto utilizando Programación orientada a objetos , en Java.';
+                        return 'Primer proyecto utilizando POO , Simula la gestión una aerolinea.';
                     }else if(this.language === 'english'){
-                        return 'First project using Object Oriented Programming , in Java.' ;
+                        return 'First project using POO Simulates the management of an airline.' ;
                     }
                 } ,
                 descriptionLaberyinth(){
@@ -257,6 +293,7 @@ export default {
 .proyectImg{
    width: 600px!important;
    height: 400px!important;
+   
     
     
     
@@ -289,6 +326,8 @@ export default {
         padding: 7px;
         margin: 10px;
         height: 620px;
+        /* border: 1px solid #4ECDC4; */
+        box-shadow: 0 0 10px #4ECDC4;
 
       
        }
@@ -298,6 +337,9 @@ export default {
         padding: 7px;
         margin: 10px;
         height: 620px;
+        border: 1px solid #4ECDC4;
+        box-shadow: 0 0 10px #1a1b1b;
+
 
 
        }
@@ -319,7 +361,8 @@ export default {
 .githubtext img{
     width: 35px;
     height: 35px;
-    margin-left: 1px;
+    margin-left: 7px;
+    margin-bottom: 8px;
    
   
    
@@ -332,8 +375,28 @@ export default {
     transform: scale(1.2);
     transition: 0.5s;
 }
+
+
+
+@keyframes aumentoDisminucion {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplicar la animación a la imagen */
+.animacion {
+   
+    animation: aumentoDisminucion 2s infinite; /* Duración de la animación y repetición infinita */
+}
       
-       
+     
 
 
 

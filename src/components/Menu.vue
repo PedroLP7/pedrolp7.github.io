@@ -15,7 +15,7 @@
       </button>
     </div>
 
-    <div class="container mt-3">
+    <div class="container mt-5">
     
 
       
@@ -23,34 +23,48 @@
       
 
       <div class="row ">
-        <div id="titles">
+        <div id="titles" class="mt-3">
          
  
-    <button :class="{ 'activeHome': showHomeActive }"  id="homeButton" class=" btn btn-primary m-5" @click="showHome()">
-        <img src="../assets/home.svg" alt="" />
-      </button>
-  
-        <span :class="{'menuLightMode': lights, 'menuDarkMode': !lights}"  @click="showItem1()" class="menuLightMode m-5 menu ">{{aboutMe}}</span>
-        <span :class="{'menuLightMode': lights, 'menuDarkMode': !lights}"  @click="showItem2()" class="menuLightMode m-5 ">{{proyects}}</span>
-        <span :class="{'menuLightMode': lights, 'menuDarkMode': !lights}" @click="showTech()" class="menuLightMode m-5 ">{{technologies}}</span>
+    <!-- <button :class="{ 'activeHome': showHomeActive }"  id="homeButton" class=" btn btn-primary m-5" @click="showHome()">
+       HOME
+      </button> -->
+      <span  :class="{'menuLightMode': lights, 'menuDarkMode': !lights,'activeText' :showHomeActive}"  @click="showHome()" class="menuLightMode m-5  ">HOME</span>
+        <span  :class="{'menuLightMode': lights, 'menuDarkMode': !lights,'activeText' :showKnow}"  @click="showItem1()" class="menuLightMode m-5  ">{{aboutMe}}</span>
+        <span :class="{'menuLightMode': lights, 'menuDarkMode': !lights,'activeText' :showProyects}"  @click="showItem2()" class="menuLightMode m-5  ">{{proyects}}</span>
+        <span :class="{'menuLightMode': lights, 'menuDarkMode': !lights,'activeText' :showTechnologies}" @click="showTech()" class="menuLightMode m-5 ">{{technologies}}</span>
         <!-- <span :class="{'active':showSkills}"  @click="showSk()" class="menu m-5">{{skills}}</span> -->
       </div>
       
-        <div class="mt-1  " 
+        <div class="mt-5  " 
           v-if="
             !showTechnologies && !showSkills && !showProyects && !showKnow
           "
           id="presentacion"
         >
-          <img  class="m-3" id="fotop" src="../assets/plp.png" alt="" />
-          <!-- <span class="text-center" id="main"> {{ presentation }} </span> -->
+          <img  class="m-3" id="fotoPersonal" src="../assets/plp.png" alt="" />
+          
           <p id="inicial" :class="{'textLight': lights, 'textDark': !lights}">
-            <span id="" :class="{'textLight': lights, 'textDark': !lights}">{{ PedroLopez }}</span>
+            <span class="Presentation" :class="{'textLight': lights, 'textDark': !lights}">{{ PedroLopez }}</span>
             <br>
-            {{Textoinicial}}
+             <span @click="showItem1()" class="underlineText" :class="{'textLight': lights, 'textDark': !lights}">{{Textoinicial}} </span>
           </p>
+          <br>
+          <br>
+          <p class="helloWorld animated-text" @click="showItem2()"> {{helloWorld   }}</p>
+          <img id="imgprincipal" src="../assets/prog.jpg" alt="" />
+        
          
         </div>
+
+
+   
+
+
+
+
+
+
         <Know v-if="showKnow" :language="language" :lights="lights" />
         <Technologies v-if="showTechnologies" />
         <Skills v-if="showSkills" />
@@ -61,14 +75,14 @@
         <a href="https://github.com/PedroLP7?tab=repositories" target="_blank">
           <img class="m-2 " src="../assets/github.svg" alt="github_icon" />
         </a>
-        <!-- <a href="mailto:plopezp2223@politecnics.barcelona"></a> -->
+        
         <img
           @click="showMail()"
           class="m-2 "
           src="../assets/mail.svg"
           alt="mail_icon"
         />
-        <span v-if="showM"> pedro.7.1995@live.com</span>
+        <span v-if="showM"> <a class="textDark"  href="mailto:plopezp2223@politecnics.barcelona"> pedro.7.1995@live.com</a> </span>
 
         <a
           href="https://www.linkedin.com/in/pedro-lopez-81b8012b3/"
@@ -82,7 +96,7 @@
           src="../assets/phone.svg"
           alt="phone_icon"
         />
-        <span v-if="showPhone">664688976</span>
+        <span class="textDark" v-if="showPhone">664688976</span>
 
         <a href="PLCV.pdf" download="pedroLp_cv.pdf"><img class="m-2" src="../assets/cv.svg" alt="cv_icon"></a>
         <button id="light" @click="manageLight(lights)" class="btn btn-secondary"> <img v-if="!lights" src="../assets/lightbulb.svg"  alt="light"> <img v-else src="../assets/lightbulbup.svg" alt="light" /></button>
@@ -106,15 +120,7 @@ export default {
     Proyects
   },
   computed: {
-    presentation() {
-      return this.language === "english"
-        ? "Pedro Lopez , Web Developer"
-        : this.language === "spanish"
-        ? "Pedro Lopez , desarrollador web"
-        : this.language === "catalan"
-        ? "Pedro Lopez , desenvolupador web "
-        : "PRESENTATION IN ENGLISH";
-    },
+    
     aboutMe() {
       return this.language === "english"
         ? "ABOUT ME"
@@ -153,23 +159,32 @@ export default {
     },
     Textoinicial(){
       return this.language === "english" 
-        ? " WELCOME TO MY PORTFOLIO ,  HERE YOU CAN FIND MORE ABOUT ME"
+        ? " WELCOME TO MY PORTFOLIO ,  HERE YOU CAN KNOW MORE ABOUT ME"
         : this.language === "spanish"
-        ? "TEXTO EN ESPAÑOL"
+        ? " BIENVENIDO A MI PORTAFOLIO , AQUI PUEDES CONOCERME MAS "
         : this.language === "catalan"
-        ? "TEXTO EN CATALAN"
-        : "TECHNOLOGIES";
+        ? " BENVINGUT AL MEU PORTFOLI , AQUI POTS CONEIXER-ME MES"
+        : " WELCOME TO MY PORTFOLIO ,  HERE YOU CAN KNOW MORE ABOUT ME";
       
        
     },
     PedroLopez(){
       return this.language === "english"
-        ? "HELLO IM PEDRO LOPEZ "
+        ? " PEDRO LOPEZ, WEB DEVELOPER "
         : this.language === "spanish"
-        ? "HOLA SOY PEDRO LOPEZ"
+        ? "PEDRO LOPEZ , DESARROLLADOR WEB"
         : this.language === "catalan"
-        ? "HOLA SÓC PEDRO LOPEZ"
-        : "TECHNOLOGIES";
+        ? "PEDRO LOPEZ , DESENVOLUPADOR WEB"
+        : "PEDRO LOPEZ , WEB DEVELOPER";
+    },
+    helloWorld(){
+      return this.language === "english"
+        ? " {{ HELLO WORLD ! }}"
+        : this.language === "spanish"
+        ? " {{ HOLA MUNDO ! }} "
+        : this.language === "catalan"
+        ? "{{ HOLA MÓN ! }}"
+        : "{{ HELLO WORLD ! }}";
     },
   },
   name: "Menu",
@@ -177,7 +192,7 @@ export default {
   methods: {
     showItem1() {
       this.showKnow = true;
-      console.log(this.showKnow);
+     
 
       this.showTechnologies = false;
       this.showSkills = false;
@@ -199,7 +214,7 @@ export default {
       this.showSkills = false;
       this.showHomeActive = false;
       this.showProyects = false;
-      console.log("tecnolocias" + this.showTechnologies);
+      // console.log("tecnolocias" + this.showTechnologies);
     },
     showHome() {
       this.showKnow = false;
@@ -208,7 +223,7 @@ export default {
       this.showMenuProyects = false;
       this.showProyects = false;
       this.showHomeActive = true; 
-      console.log(this.showHomeActive)
+      // console.log(this.showHomeActive)
      
     },
     showSk() {
@@ -219,7 +234,7 @@ export default {
     },
     changeLanguage(language) {
       this.language = language;
-      console.log(this.language);
+      // console.log(this.language);
       
     },
     showTlf() {
@@ -244,7 +259,7 @@ export default {
       if(this.lights){
         this.lights = false;
         document.body.style.backgroundColor = "#1E1E1E";
-        console.log("apagamos las luces");
+        // console.log("apagamos las luces");
        
        
       }else{
@@ -253,7 +268,7 @@ export default {
         
 
         document.body.style.backgroundColor = "#F5F5F5";
-        console.log("encendemos las luces");
+        // console.log("encendemos las luces");
        
        
        
@@ -271,16 +286,17 @@ export default {
       language: "english",
       showPhone: false,
       showM: false,
-      showHomeActive: false,
-      lights: true,
+      showHomeActive: true,
+      lights: false,
       showProyects: false,
     };
   },
   beforeMount() {
-    // window.addEventListener("load", function () {
-    //     document.body.style.backgroundColor = "#1E1E1E";
-    //   });
+    window.addEventListener("load", function () {
+        document.body.style.backgroundColor = "#1E1E1E";
+      });
   },
+ 
 };
 </script>
 <style >
@@ -366,7 +382,7 @@ Texto: #333333 (Gris Oscuro)
   .textoClaro{
     color: #f3f4f5;
   }
-  .menuDarkMode:hover{
+  /* .menuDarkMode:hover{
     color: transparent;
       cursor: pointer;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -380,7 +396,7 @@ Texto: #333333 (Gris Oscuro)
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       -webkit-text-stroke: 1px #130101;
   
-   }
+   } */
    #light{
     /* posicion para el boton de la luz */
       position: fixed;
@@ -404,7 +420,82 @@ Texto: #333333 (Gris Oscuro)
       position: relative;
       left: -40px;
     }
-      
-  
+       a{
+        text-decoration: underline;
+        text-underline-offset: 7px; 
+       
+       }
+
+
+
+       .activeText{
+          
+          text-decoration: underline;
+          text-underline-offset: 0.1em;
+          text-decoration-thickness: 0.1em;
+
+       }
+
+       .Presentation{
+          font-size: 42px;
+          font-weight: 500;
+       }
+
+       #imgprincipal{
+          width: 500px;
+          height: 500px;
+          position: relative;
+          left: 60%;
+          bottom: 35%;
+          border-radius: 8%;
+       }
+
+        #fotoPersonal{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+           
+        }
+
+        .underlineText{
+        
+          font-size: 19px;
+          text-decoration: underline;
+          text-underline-offset: 0.2em;
+          cursor: pointer;
+        }
+   /* estilso para el helloworld */
+        .helloWorld{  
+          margin: 10px;
+          font-size: 35px !important;
+          cursor: pointer !important;
+        }
+
+        .animated-text {
+    font-size: 4em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #007ACC, #43A047, #F28B25, #A074C4, #E51400);
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  #homeButton{
+    background-color: #4ECDC4;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
  
 </style>

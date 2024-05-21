@@ -1,105 +1,77 @@
 <template>
-  
-      <div class="row col-8 techcol">
-        <div class="tech m-4" id="java">
-            
-          <img class="icon" src="../assets/java.png" alt="" />
-        </div>
+  <div class="row col-6 m-5 techcol mt-5">
+    <div class="tech m-4" id="java">
+      <img class="icon" src="../assets/java.png" alt="" />
+      <span class="tooltip">Java</span>
+    </div>
 
-        <div class="tech m-4" id="js">
-          <img class="icon" src="../assets/js.png" alt="" />
-        </div>
+    <div class="tech m-4" id="js">
+      <img class="icon" src="../assets/js.png" alt="" />
+      <span class="tooltip">JavaScript</span>
+    </div>
 
-        <div class="tech m-4" id="git">
-          <img class="icon" src="../assets/git.png" alt="" />
-        </div>
-        <div class="tech m-4" id="html">
-            <img class="icon" src="../assets/html.png" alt="">
+    <div class="tech m-4" id="git">
+      <img class="icon" src="../assets/git.png" alt="" />
+      <span class="tooltip">Git</span>
+    </div>
+    <div class="tech m-4" id="html">
+      <img class="icon" src="../assets/html.png" alt="" />
+      <span class="tooltip">HTML</span>
+    </div>
 
+    <div class="tech m-4" id="vue">
+      <img class="icon" src="../assets/vue.png" alt="" />
+      <span class="tooltip">Vue.js</span>
+    </div>
+    <div class="tech m-4" id="docker">
+      <img class="icon" src="../assets/docker.png" alt="" />
+      <span class="tooltip">Docker</span>
+    </div>
+    <div class="tech m-4" id="laravel">
+      <img class="icon" src="../assets/laravel.png" alt="" />
+      <span class="tooltip">Laravel</span>
+    </div>
 
-        </div>
+    <div class="tech m-4" id="sql">
+      <img class="icon" src="../assets/sql.png" alt="" />
+      <span class="tooltip">SQL</span>
+    </div>
+    <div class="tech m-4" id="c">
+      <img class="icon" src="../assets/c.png" alt="" />
+      <span class="tooltip">C</span>
+    </div>
 
+    <div class="tech m-4" id="php">
+      <img class="icon" src="../assets/php.png" alt="" />
+      <span class="tooltip">PHP</span>
+    </div>
 
-        <div class="tech m-4" id="vue">
-            <img class="icon" src="../assets/vue.png" alt="">
+    <div class="tech m-4" id="css">
+      <img class="icon" src="../assets/css.png" alt="" />
+      <span class="tooltip">CSS</span>
+    </div>
 
-
-        </div>
-        <div class="tech m-4" id="docker">
-            <img class="icon" src="../assets/docker.png" alt="">
-
-
-        </div>
-        <div class="tech m-4" id="laravel">
-            <img class="icon" src="../assets/laravel.png" alt="">
-
-
-        </div>
-
-
-        <div class="tech m-4" id="sql">
-            <img class="icon" src="../assets/sql.png" alt="">
-
-
-        </div>
-        <div class="tech m-4" id="c">
-            <img class="icon" src="../assets/c.png" alt="">
-
-
-        </div>
-
-        <div class="tech m-4" id="php">
-            <img class="icon" src="../assets/php.png" alt="">
-
-
-        </div>
-
-        <div class="tech m-4" id="css">
-            <img class="icon" src="../assets/css.png" alt="">
-
-
-        </div>
-
-        <div class="tech m-4" id="python">
-            <img class="icon" src="../assets/python.png" alt="">
-
-
-        </div>
-
-
-
-
-    
-
-
-     
+    <div class="tech m-4" id="python">
+      <img class="icon" src="../assets/python.png" alt="" />
+      <span class="tooltip">Python</span>
+    </div>
   </div>
 </template>
-<script>
-export default {
-  name: "Technologies",
-  data() {
-    return {};
-  },
-  methods: {},
-};
-</script>
+
 <style scoped>
 .tech {
   align-items: center;
   width: auto;
   height: auto;
-
-  /* box-shadow: 0 4px 8px 0 rgba(212, 223, 215, 0.2); */
   transition: 0.3s;
   border-radius: 8px;
   background-color: white;
+  position: relative;
 }
 .tech:hover {
   transform: scale(1.15);
-  background-color: #090000;
+  background-color: #E0E0E0;
   border-radius: 20px;
-  
   transition: 0.5s;
 }
 
@@ -107,12 +79,37 @@ export default {
   width: 90px;
   height: 90px;
 }
+
 .row {
   position: relative;
   left: 20%;
 }
-.techcol{
+
+.techcol {
   justify-content: center;
 }
 
+.tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: #4ECDC4;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Adjust this value to position the tooltip */
+  left: 50%;
+  margin-left: -50px; /* Adjust this value to align the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tech:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  
+}
 </style>
+

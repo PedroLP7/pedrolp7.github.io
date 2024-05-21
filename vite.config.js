@@ -13,5 +13,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base:"https://pedrolp7.github.io/portfolio/"
+  // base:"https://pedrolp7.github.io/portfolio/"
 })
