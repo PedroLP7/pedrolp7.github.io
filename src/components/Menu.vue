@@ -350,7 +350,15 @@ a {
     bottom: 0;
     margin-bottom: 20px;
   }
+
+#light{
+ position: fixed;
+  left: 80% !important;
 }
+ 
+
+}
+
 @media(max-width:1300px){
   #titles {
     display: flex;
