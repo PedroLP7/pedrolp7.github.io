@@ -1,5 +1,5 @@
 <template>
-  <div class="row col-6 m-5 techcol mt-5">
+  <div class="row techcol mt-5">
     <div class="tech m-4" id="java">
       <img class="icon" src="../assets/java.png" alt="" />
       <span class="tooltip">Java</span>
@@ -67,6 +67,9 @@
   border-radius: 8px;
   background-color: white;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .tech:hover {
   transform: scale(1.15);
@@ -80,12 +83,9 @@
   height: 90px;
 }
 
-.row {
-  position: relative;
-  left: 20%;
-}
-
 .techcol {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -99,9 +99,9 @@
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Adjust this value to position the tooltip */
+  bottom: 125%;
   left: 50%;
-  margin-left: -50px; /* Adjust this value to align the tooltip */
+  margin-left: -50px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -109,7 +109,51 @@
 .tech:hover .tooltip {
   visibility: visible;
   opacity: 1;
-  
+}
+
+@media (max-width: 1200px) {
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tech {
+    margin: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tooltip {
+    width: 80px;
+    margin-left: -40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tech {
+    margin: 5%;
+  }
+
+  .tooltip {
+    width: 70px;
+    margin-left: -35px;
+  }
 }
 </style>
-
