@@ -22,7 +22,7 @@
         </div>
         
         <div class="mt-5 text-center text-md-start" v-if="!showTechnologies && !showSkills && !showProyects && !showKnow" id="presentacion">
-          <img class="m-3 img-fluid" id="fotoPersonal" src="../assets/plp.png" alt="" />
+          <img class="m-3 img-fluid" id="fotoPersonal" src="../assets/plp.jpg" alt="" />
           <p id="inicial" :class="{'textLight': lights, 'textDark': !lights}">
             <span class="Presentation" :class="{'textLight': lights, 'textDark': !lights}">{{ PedroLopez }}</span>
             <br>
@@ -279,9 +279,9 @@ a {
 }
 
 #fotoPersonal {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 180px;
+  height: 220px;
+  border-radius: 3%;
   position: relative;
 }
 
