@@ -279,10 +279,11 @@ a {
 }
 
 #fotoPersonal {
-  width: 180px;
+  width: 220px;
   height: 220px;
-  border-radius: 3%;
+  border-radius: 50%;
   position: relative;
+  object-fit: cover;
 }
 
 .underlineText {
